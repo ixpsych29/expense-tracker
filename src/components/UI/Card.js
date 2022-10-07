@@ -5,3 +5,5 @@ const Card = (props) => {
 
   return <div className={classes}>{props.children}</div>;
 };
+
+export dafault Card;
