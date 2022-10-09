@@ -14,6 +14,7 @@ export const ExpenseForm = () => {
 //   });
 
   //declaration of functions
+  
   const titleChangeHandler = (event) => {
     console.log(event.target.value);
     //1-way
@@ -31,18 +32,27 @@ export const ExpenseForm = () => {
   };
   const amountChangeHandler = (event) => {
     console.log(event.target.value);
-    setEnteredAmount(event.target.value);
-    
+    setEnteredAmount(event.target.value);    
   };
   const dateChangeHandler = (event) => {
     console.log(event.target.value);
     setEnteredDate(event.target.value);
-    
   };
+  const submitHandler = (event) => {
+    event.preventDefault();
+    console.log('submitted');
+
+    const expenseData = {
+      title: enteredTitle,
+      amount: enteredAmount,
+      date: new Date(enteredDate),
+    };
+    console.log(expenseData);
+  }
 
   return (
     <div>
-      <form action="">
+      <form onSubmit={submitHandler}>
         <div className="new-expense__control">
           <div className="new-expense__control">
             <label>Title</label>
