@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "./ExpenseForm.css";
 
-export const ExpenseForm = (props) => {
+const ExpenseForm = (props) => {
   const [enteredTitle, setEnteredTitle] = useState("");
   const [enteredAmount, setEnteredAmount] = useState("");
   const [enteredDate, setEnteredDate] = useState("");
@@ -42,7 +42,7 @@ export const ExpenseForm = (props) => {
     // console.log('submitted');
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
     //console.log(expenseData);
@@ -92,3 +92,5 @@ export const ExpenseForm = (props) => {
     </div>
   );
 };
+
+export default ExpenseForm;
